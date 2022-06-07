@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>nodejs的基本用法 | Xuli&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.7df12f51.css" as="style"><link rel="preload" href="/assets/js/app.ae1014d0.js" as="script"><link rel="preload" href="/assets/js/2.0929aa91.js" as="script"><link rel="preload" href="/assets/js/271.072c0c98.js" as="script"><link rel="prefetch" href="/assets/js/10.4bdb89ee.js"><link rel="prefetch" href="/assets/js/100.151c3012.js"><link rel="prefetch" href="/assets/js/101.f7532c5e.js"><link rel="prefetch" href="/assets/js/102.1089249a.js"><link rel="prefetch" href="/assets/js/103.638f4733.js"><link rel="prefetch" href="/assets/js/104.1d534122.js"><link rel="prefetch" href="/assets/js/105.06c0bbf9.js"><link rel="prefetch" href="/assets/js/106.92ca4115.js"><link rel="prefetch" href="/assets/js/107.85e42729.js"><link rel="prefetch" href="/assets/js/108.27a6c668.js"><link rel="prefetch" href="/assets/js/109.62c5a10a.js"><link rel="prefetch" href="/assets/js/11.d404b72f.js"><link rel="prefetch" href="/assets/js/110.d11e0109.js"><link rel="prefetch" href="/assets/js/111.1e0c098b.js"><link rel="prefetch" href="/assets/js/112.e254dac0.js"><link rel="prefetch" href="/assets/js/113.67716f81.js"><link rel="prefetch" href="/assets/js/114.f29df292.js"><link rel="prefetch" href="/assets/js/115.4a832c3d.js"><link rel="prefetch" href="/assets/js/116.7e342fac.js"><link rel="prefetch" href="/assets/js/117.0b07f2f8.js"><link rel="prefetch" href="/assets/js/118.db361661.js"><link rel="prefetch" href="/assets/js/119.4feef380.js"><link rel="prefetch" href="/assets/js/12.23c73db0.js"><link rel="prefetch" href="/assets/js/120.4f7f4ee2.js"><link rel="prefetch" href="/assets/js/121.df13004f.js"><link rel="prefetch" href="/assets/js/122.6d767a40.js"><link rel="prefetch" href="/assets/js/123.0350480a.js"><link rel="prefetch" href="/assets/js/124.3d686ac4.js"><link rel="prefetch" href="/assets/js/125.2baee703.js"><link rel="prefetch" href="/assets/js/126.60932da0.js"><link rel="prefetch" href="/assets/js/127.e3d31902.js"><link rel="prefetch" href="/assets/js/128.5f3529e4.js"><link rel="prefetch" href="/assets/js/129.98d9f85c.js"><link rel="prefetch" href="/assets/js/13.ff50593c.js"><link rel="prefetch" href="/assets/js/130.ee0f2916.js"><link rel="prefetch" href="/assets/js/131.e61bb4aa.js"><link rel="prefetch" href="/assets/js/132.acdc1343.js"><link rel="prefetch" href="/assets/js/133.c9e76739.js"><link rel="prefetch" href="/assets/js/134.cbcd2964.js"><link rel="prefetch" href="/assets/js/135.4122a226.js"><link rel="prefetch" href="/assets/js/136.9372f9a6.js"><link rel="prefetch" href="/assets/js/137.880d21ff.js"><link rel="prefetch" href="/assets/js/138.46f50548.js"><link rel="prefetch" href="/assets/js/139.f2b60c6d.js"><link rel="prefetch" href="/assets/js/14.37ab52e2.js"><link rel="prefetch" href="/assets/js/140.d042b179.js"><link rel="prefetch" href="/assets/js/141.3a2723e3.js"><link rel="prefetch" href="/assets/js/142.44576d63.js"><link rel="prefetch" href="/assets/js/143.a798fa29.js"><link rel="prefetch" href="/assets/js/144.e70329ab.js"><link rel="prefetch" href="/assets/js/145.746062ae.js"><link rel="prefetch" href="/assets/js/146.3e99370f.js"><link rel="prefetch" href="/assets/js/147.981d5bae.js"><link rel="prefetch" href="/assets/js/148.6feb1caf.js"><link rel="prefetch" href="/assets/js/149.606b299d.js"><link rel="prefetch" href="/assets/js/15.9179242a.js"><link rel="prefetch" href="/assets/js/150.57f66aa3.js"><link rel="prefetch" href="/assets/js/151.e82ed5b7.js"><link rel="prefetch" href="/assets/js/152.de1c615c.js"><link rel="prefetch" href="/assets/js/153.4c0906bf.js"><link rel="prefetch" href="/assets/js/154.5f1f2309.js"><link rel="prefetch" href="/assets/js/155.2f44369e.js"><link rel="prefetch" href="/assets/js/156.fb853e07.js"><link rel="prefetch" href="/assets/js/157.fc696530.js"><link rel="prefetch" href="/assets/js/158.42305671.js"><link rel="prefetch" href="/assets/js/159.aeeaf452.js"><link rel="prefetch" href="/assets/js/16.39bae875.js"><link rel="prefetch" href="/assets/js/160.97ff0082.js"><link rel="prefetch" href="/assets/js/161.ea02547c.js"><link rel="prefetch" href="/assets/js/162.a7dc58b3.js"><link rel="prefetch" href="/assets/js/163.7de06ea6.js"><link rel="prefetch" href="/assets/js/164.6c7bb19d.js"><link rel="prefetch" href="/assets/js/165.246b1310.js"><link rel="prefetch" href="/assets/js/166.9d473a86.js"><link rel="prefetch" href="/assets/js/167.d6a6946c.js"><link rel="prefetch" href="/assets/js/168.573cc1a2.js"><link rel="prefetch" href="/assets/js/169.dfb815af.js"><link rel="prefetch" href="/assets/js/17.2dafb7c5.js"><link rel="prefetch" href="/assets/js/170.1a4b01b7.js"><link rel="prefetch" href="/assets/js/171.da868f87.js"><link rel="prefetch" href="/assets/js/172.0a41ce61.js"><link rel="prefetch" href="/assets/js/173.b1db7e04.js"><link rel="prefetch" href="/assets/js/174.a2912494.js"><link rel="prefetch" href="/assets/js/175.80b0ff7b.js"><link rel="prefetch" href="/assets/js/176.b286be59.js"><link rel="prefetch" href="/assets/js/177.d477975c.js"><link rel="prefetch" href="/assets/js/178.a9378c73.js"><link rel="prefetch" href="/assets/js/179.f32f6835.js"><link rel="prefetch" href="/assets/js/18.df9528ed.js"><link rel="prefetch" href="/assets/js/180.afb310df.js"><link rel="prefetch" href="/assets/js/181.a1371c07.js"><link rel="prefetch" href="/assets/js/182.481b5a03.js"><link rel="prefetch" href="/assets/js/183.2d51e601.js"><link rel="prefetch" href="/assets/js/184.b6315203.js"><link rel="prefetch" href="/assets/js/185.f4095d2a.js"><link rel="prefetch" href="/assets/js/186.b5705121.js"><link rel="prefetch" href="/assets/js/187.3999cc52.js"><link rel="prefetch" href="/assets/js/188.f6fe1716.js"><link rel="prefetch" href="/assets/js/189.d8b79870.js"><link rel="prefetch" href="/assets/js/19.d71955ef.js"><link rel="prefetch" href="/assets/js/190.b4900e0f.js"><link rel="prefetch" href="/assets/js/191.9d4d7995.js"><link rel="prefetch" href="/assets/js/192.0e39272b.js"><link rel="prefetch" href="/assets/js/193.2299fef0.js"><link rel="prefetch" href="/assets/js/194.436e220c.js"><link rel="prefetch" href="/assets/js/195.281dc036.js"><link rel="prefetch" href="/assets/js/196.80d9a49a.js"><link rel="prefetch" href="/assets/js/197.b3cdd2ea.js"><link rel="prefetch" href="/assets/js/198.8a8b48a8.js"><link rel="prefetch" href="/assets/js/199.89b06297.js"><link rel="prefetch" href="/assets/js/20.fbbbb4a2.js"><link rel="prefetch" href="/assets/js/200.4cc8ee97.js"><link rel="prefetch" href="/assets/js/201.fee4bccc.js"><link rel="prefetch" href="/assets/js/202.edc4d5db.js"><link rel="prefetch" href="/assets/js/203.cff86dc2.js"><link rel="prefetch" href="/assets/js/204.f4315fea.js"><link rel="prefetch" href="/assets/js/205.ce8878e1.js"><link rel="prefetch" href="/assets/js/206.d3021ca5.js"><link rel="prefetch" href="/assets/js/207.e5f1bf22.js"><link rel="prefetch" href="/assets/js/208.6ebee4a9.js"><link rel="prefetch" href="/assets/js/209.662e7b6a.js"><link rel="prefetch" href="/assets/js/21.36081b83.js"><link rel="prefetch" href="/assets/js/210.ce2c0b1a.js"><link rel="prefetch" href="/assets/js/211.6f1af69e.js"><link rel="prefetch" href="/assets/js/212.3b9c8e2b.js"><link rel="prefetch" href="/assets/js/213.c848669b.js"><link rel="prefetch" href="/assets/js/214.ee964723.js"><link rel="prefetch" href="/assets/js/215.21cb777c.js"><link rel="prefetch" href="/assets/js/216.7f9215b6.js"><link rel="prefetch" href="/assets/js/217.977f100a.js"><link rel="prefetch" href="/assets/js/218.82177dd7.js"><link rel="prefetch" href="/assets/js/219.19a31121.js"><link rel="prefetch" href="/assets/js/22.a8b3dfb3.js"><link rel="prefetch" href="/assets/js/220.ec30e722.js"><link rel="prefetch" href="/assets/js/221.a3789d03.js"><link rel="prefetch" href="/assets/js/222.9eb5084d.js"><link rel="prefetch" href="/assets/js/223.16bc8621.js"><link rel="prefetch" href="/assets/js/224.07221c79.js"><link rel="prefetch" href="/assets/js/225.bcef2069.js"><link rel="prefetch" href="/assets/js/226.44d55599.js"><link rel="prefetch" href="/assets/js/227.41507cae.js"><link rel="prefetch" href="/assets/js/228.710cc669.js"><link rel="prefetch" href="/assets/js/229.388605e2.js"><link rel="prefetch" href="/assets/js/23.e18c6c6d.js"><link rel="prefetch" href="/assets/js/230.41a44f2b.js"><link rel="prefetch" href="/assets/js/231.30efb2b1.js"><link rel="prefetch" href="/assets/js/232.83aba0c1.js"><link rel="prefetch" href="/assets/js/233.37c29b6e.js"><link rel="prefetch" href="/assets/js/234.69900621.js"><link rel="prefetch" href="/assets/js/235.2f519beb.js"><link rel="prefetch" href="/assets/js/236.b9b6114e.js"><link rel="prefetch" href="/assets/js/237.2a1db7cc.js"><link rel="prefetch" href="/assets/js/238.600f5600.js"><link rel="prefetch" href="/assets/js/239.8be2d1bb.js"><link rel="prefetch" href="/assets/js/24.cd0b391e.js"><link rel="prefetch" href="/assets/js/240.251e8c24.js"><link rel="prefetch" href="/assets/js/241.d43f064c.js"><link rel="prefetch" href="/assets/js/242.86d5eacb.js"><link rel="prefetch" href="/assets/js/243.80963c44.js"><link rel="prefetch" href="/assets/js/244.13652b92.js"><link rel="prefetch" href="/assets/js/245.eb2bce9c.js"><link rel="prefetch" href="/assets/js/246.a8194f0b.js"><link rel="prefetch" href="/assets/js/247.db00d5f1.js"><link rel="prefetch" href="/assets/js/248.14ed39e2.js"><link rel="prefetch" href="/assets/js/249.142eeecc.js"><link rel="prefetch" href="/assets/js/25.ab3e6688.js"><link rel="prefetch" href="/assets/js/250.4590655a.js"><link rel="prefetch" href="/assets/js/251.f29145b6.js"><link rel="prefetch" href="/assets/js/252.c2322d74.js"><link rel="prefetch" href="/assets/js/253.10424c86.js"><link rel="prefetch" href="/assets/js/254.58d56bca.js"><link rel="prefetch" href="/assets/js/255.c5159cc8.js"><link rel="prefetch" href="/assets/js/256.4cb6be49.js"><link rel="prefetch" href="/assets/js/257.75008126.js"><link rel="prefetch" href="/assets/js/258.1f8c2773.js"><link rel="prefetch" href="/assets/js/259.69dba07f.js"><link rel="prefetch" href="/assets/js/26.e6c287b8.js"><link rel="prefetch" href="/assets/js/260.46e86546.js"><link rel="prefetch" href="/assets/js/261.a525bac6.js"><link rel="prefetch" href="/assets/js/262.cf8ad77b.js"><link rel="prefetch" href="/assets/js/263.5ca29a56.js"><link rel="prefetch" href="/assets/js/264.563d42f2.js"><link rel="prefetch" href="/assets/js/265.133d3598.js"><link rel="prefetch" href="/assets/js/266.27779523.js"><link rel="prefetch" href="/assets/js/267.31bcfcb3.js"><link rel="prefetch" href="/assets/js/268.9f0a35d7.js"><link rel="prefetch" href="/assets/js/269.7aa9cb8f.js"><link rel="prefetch" href="/assets/js/27.d2998298.js"><link rel="prefetch" href="/assets/js/270.d550ac18.js"><link rel="prefetch" href="/assets/js/272.2662f9f7.js"><link rel="prefetch" href="/assets/js/273.15ade875.js"><link rel="prefetch" href="/assets/js/274.4a133ef6.js"><link rel="prefetch" href="/assets/js/275.96345d22.js"><link rel="prefetch" href="/assets/js/276.081ed3d8.js"><link rel="prefetch" href="/assets/js/277.3ab443bb.js"><link rel="prefetch" href="/assets/js/278.34bcd6be.js"><link rel="prefetch" href="/assets/js/279.bd0a94a7.js"><link rel="prefetch" href="/assets/js/28.3b62382f.js"><link rel="prefetch" href="/assets/js/29.ea60709b.js"><link rel="prefetch" href="/assets/js/3.7fe9dcd8.js"><link rel="prefetch" href="/assets/js/30.849ee28c.js"><link rel="prefetch" href="/assets/js/31.70d851a0.js"><link rel="prefetch" href="/assets/js/32.ec64b5a1.js"><link rel="prefetch" href="/assets/js/33.da3a8699.js"><link rel="prefetch" href="/assets/js/34.215b8865.js"><link rel="prefetch" href="/assets/js/35.b2199b5c.js"><link rel="prefetch" href="/assets/js/36.8706ed65.js"><link rel="prefetch" href="/assets/js/37.01581e35.js"><link rel="prefetch" href="/assets/js/38.ae096490.js"><link rel="prefetch" href="/assets/js/39.7a5b29f6.js"><link rel="prefetch" href="/assets/js/4.654a78a2.js"><link rel="prefetch" href="/assets/js/40.f12b20fb.js"><link rel="prefetch" href="/assets/js/41.45c22686.js"><link rel="prefetch" href="/assets/js/42.03c2287d.js"><link rel="prefetch" href="/assets/js/43.d1ec6a2f.js"><link rel="prefetch" href="/assets/js/44.8d124671.js"><link rel="prefetch" href="/assets/js/45.91d492b8.js"><link rel="prefetch" href="/assets/js/46.48b2a256.js"><link rel="prefetch" href="/assets/js/47.45559e22.js"><link rel="prefetch" href="/assets/js/48.3a6edc8d.js"><link rel="prefetch" href="/assets/js/49.214a15d3.js"><link rel="prefetch" href="/assets/js/5.c50a77fe.js"><link rel="prefetch" href="/assets/js/50.4f64b9f1.js"><link rel="prefetch" href="/assets/js/51.988e74d3.js"><link rel="prefetch" href="/assets/js/52.cec08826.js"><link rel="prefetch" href="/assets/js/53.d2406cf6.js"><link rel="prefetch" href="/assets/js/54.7b9f0481.js"><link rel="prefetch" href="/assets/js/55.351fec50.js"><link rel="prefetch" href="/assets/js/56.5a4a0b96.js"><link rel="prefetch" href="/assets/js/57.21798229.js"><link rel="prefetch" href="/assets/js/58.b5c5745f.js"><link rel="prefetch" href="/assets/js/59.fe0e4afa.js"><link rel="prefetch" href="/assets/js/6.cc995097.js"><link rel="prefetch" href="/assets/js/60.e653cff0.js"><link rel="prefetch" href="/assets/js/61.c85d235a.js"><link rel="prefetch" href="/assets/js/62.699a95f2.js"><link rel="prefetch" href="/assets/js/63.a17696d7.js"><link rel="prefetch" href="/assets/js/64.742a9eb5.js"><link rel="prefetch" href="/assets/js/65.6d300178.js"><link rel="prefetch" href="/assets/js/66.86cef7aa.js"><link rel="prefetch" href="/assets/js/67.796d125c.js"><link rel="prefetch" href="/assets/js/68.b3c2d220.js"><link rel="prefetch" href="/assets/js/69.07795e0e.js"><link rel="prefetch" href="/assets/js/7.c7d43652.js"><link rel="prefetch" href="/assets/js/70.3854d9b8.js"><link rel="prefetch" href="/assets/js/71.d66f2b34.js"><link rel="prefetch" href="/assets/js/72.1350fee4.js"><link rel="prefetch" href="/assets/js/73.a3dded61.js"><link rel="prefetch" href="/assets/js/74.74f0bfff.js"><link rel="prefetch" href="/assets/js/75.4ec95ff3.js"><link rel="prefetch" href="/assets/js/76.1f00db96.js"><link rel="prefetch" href="/assets/js/77.a9d9378a.js"><link rel="prefetch" href="/assets/js/78.a7ddad0d.js"><link rel="prefetch" href="/assets/js/79.46324233.js"><link rel="prefetch" href="/assets/js/8.f0e74718.js"><link rel="prefetch" href="/assets/js/80.801cf0a4.js"><link rel="prefetch" href="/assets/js/81.546e27d2.js"><link rel="prefetch" href="/assets/js/82.d91ad6e6.js"><link rel="prefetch" href="/assets/js/83.fa6487b0.js"><link rel="prefetch" href="/assets/js/84.52dea52e.js"><link rel="prefetch" href="/assets/js/85.68419534.js"><link rel="prefetch" href="/assets/js/86.075c2556.js"><link rel="prefetch" href="/assets/js/87.76c9b596.js"><link rel="prefetch" href="/assets/js/88.030619a8.js"><link rel="prefetch" href="/assets/js/89.cf9cfa28.js"><link rel="prefetch" href="/assets/js/9.2ff272e7.js"><link rel="prefetch" href="/assets/js/90.d95a8854.js"><link rel="prefetch" href="/assets/js/91.c54d7493.js"><link rel="prefetch" href="/assets/js/92.2c3257eb.js"><link rel="prefetch" href="/assets/js/93.b952455a.js"><link rel="prefetch" href="/assets/js/94.4b40b489.js"><link rel="prefetch" href="/assets/js/95.26f010a2.js"><link rel="prefetch" href="/assets/js/96.b2776f09.js"><link rel="prefetch" href="/assets/js/97.d1c685d8.js"><link rel="prefetch" href="/assets/js/98.e1e97635.js"><link rel="prefetch" href="/assets/js/99.9f5d62e4.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7df12f51.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open no-sidebar have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="Xuli's blog" class="logo"> <span class="site-name can-hide">Xuli's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><a href="/web/" class="link-title">前端</a> <span class="title" style="display:none;">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/b7708e/404" class="nav-link">前端文章</a></li><li class="dropdown-item"><!----> <a href="/pages/b7708e/404" class="nav-link">学习笔记</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="页面" class="dropdown-title"><a href="/ui/" class="link-title">页面</a> <span class="title" style="display:none;">页面</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/8309a5b876fc95e3/" class="nav-link">HTML</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">CSS</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><a href="/technology/" class="link-title">技术</a> <span class="title" style="display:none;">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/117708e0af7f0bd9/" class="nav-link">Nodejs</a></li><li class="dropdown-item"><!----> <a href="/pages/41f87d890d0a02af/" class="nav-link">博客搭建</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/2d615df9a36a98ed/" class="nav-link">心情杂货</a></li><li class="dropdown-item"><!----> <a href="/pages/baaa02/" class="nav-link">实用技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/pages/beb6c0bd8a66cea6/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wenxuli/vuepress-theme-vdoing" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/images/character.png"> <div class="blogger-info"><h3>Xuli</h3> <span>前端界的小白</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><a href="/web/" class="link-title">前端</a> <span class="title" style="display:none;">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/b7708e/404" class="nav-link">前端文章</a></li><li class="dropdown-item"><!----> <a href="/pages/b7708e/404" class="nav-link">学习笔记</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="页面" class="dropdown-title"><a href="/ui/" class="link-title">页面</a> <span class="title" style="display:none;">页面</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/8309a5b876fc95e3/" class="nav-link">HTML</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">CSS</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><a href="/technology/" class="link-title">技术</a> <span class="title" style="display:none;">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/117708e0af7f0bd9/" class="nav-link">Nodejs</a></li><li class="dropdown-item"><!----> <a href="/pages/41f87d890d0a02af/" class="nav-link">博客搭建</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/2d615df9a36a98ed/" class="nav-link">心情杂货</a></li><li class="dropdown-item"><!----> <a href="/pages/baaa02/" class="nav-link">实用技巧</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/pages/beb6c0bd8a66cea6/" class="nav-link">收藏</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wenxuli/vuepress-theme-vdoing" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-1baff76c><div class="articleInfo" data-v-1baff76c><ul class="breadcrumbs" data-v-1baff76c><li data-v-1baff76c><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-1baff76c></a></li> <li data-v-1baff76c><a href="/categories/?category=%E3%80%8AJavaScript%E6%95%99%E7%A8%8B%E3%80%8B%E7%AC%94%E8%AE%B0" title="分类" data-v-1baff76c>《JavaScript教程》笔记</a></li></ul> <div class="info" data-v-1baff76c><div title="作者" class="author iconfont icon-touxiang" data-v-1baff76c><a href="https://github.com/wenxuli2" target="_blank" title="作者" class="beLink" data-v-1baff76c>Xuli</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-1baff76c><a href="javascript:;" data-v-1baff76c>2022-03-22</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">nodejs的基本用法<!----></h1>  <div class="theme-vdoing-content content__default"><h2 id="核心库"><a href="#核心库" class="header-anchor">#</a> 核心库</h2> <h3 id="操作文件流-fs"><a href="#操作文件流-fs" class="header-anchor">#</a> 操作文件流——fs</h3> <div class="language- extra-class"><pre><code>/* 
+1. fs.stat  检测是文件还是目录(目录 文件是否存在) 
+1.1 fs.existsSync 检测文件是否存在
+1. fs.mkdir  创建目录 （创建之前先判断是否存在）
+2. 2.1 递归创建目录 
+3. fs.writeFile  写入文件(文件不存在就创建,但不能创建目录) 
+4. fs.appendFile 写入追加文件 
+5.fs.readFile 读取文件 
+6.fs.readdir 读取目录 
+7.fs.rename 重命名 
+1. fs.rmdir  删除目录 
+2. fs.unlink 删除文件 
+*/
+const fs = require('fs');//fs是node.js的核心模块，不用下载安装，可以直接引入  
+//1. fs.stat  检测是文件还是目录  fs.statSync()同步获取stats对象,通过返回值接收。
+fs.stat('html',function(error,stats){
+    if(error){
+        console.log(error);
+        return false;
+    }
+    console.log('文件：'+stats.isFile());
+    console.log('目录：'+stats.isDirectory());
+})
+1.1 fs.existsSync 检测文件是否存在
+</code></pre></div><p>​<br>
+​    //2. fs.mkdir  创建目录<br>
+​    fs.mkdir('css',function(error){
+​        if(error){
+​            console.log(error);
+​            return false;
+​        }
+​        console.log('创建目录成功');
+​    })
+​<br>
+​    //2.1 递归创建目录
+​    const path = require('path');
+​    const fs = require('fs');
+​    function myMkdirSync(dirname) {
+​    if (fs.existsSync(dirname)) {
+​        return true;
+​    } else {
+​        //如果父级目录已经创建，然后才能创建子级目录
+​        if (myMkdirSync(path.dirname(dirname))) {
+​        fs.mkdirSync(dirname);
+​        return true;
+​        }
+​    }
+​    }</p> <p>​</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> //3. fs.writeFile  写入文件（会覆盖之前的内容）（文件不存在就创建）  utf8参数可以省略  
+    fs.writeFile('123.txt','你好nodejs 覆盖','utf8',function(error){
+        if(error){
+            console.log(error);
+            return false;
+        }
+        console.log('写入成功');
+    })
+
+
+    
+    //4. fs.appendFile 追加文件  
+    fs.appendFile('123.txt','这是写入的内容\n',function(error){
+        if(error){
+            console.log(error);
+            return false;
+        }
+        console.log('写入成功');
+    })
+
+
+​    
+​    //5.fs.readFile 读取文件  
+​    fs.readFile('123.txt',function(error,data){
+​        if(error){
+​            console.log(error);
+​            return false;
+​        }
+​        //console.log(data);  //data是读取的十六进制的数据。  也可以在参数中加入编码格式&quot;utf8&quot;来解决十六进制的问题;
+​        console.log(data.toString());  //读取出所有行的信息  
+​    })
+
+
+​    
+​    //6.fs.readdir 读取目录下第一级内容  把目录下面的文件和文件夹都获取到。  
+​    fs.readdir('html',function(error,data){
+​        if(error){
+​            console.log(error);
+​            return false;
+​        }
+​        console.log(data);  //data是数组类型，包含文件夹以及文件的名字(只有第一级目录内容)。拿到一个文件夹下面的所有目录  
+​    })
+
+
+​    
+​    //7.fs.rename 重命名  1.改名  2.剪切文件(移动)  
+​    fs.rename('html/index.html','html/news.html',function(error){
+​        if(error){
+​            console.log(error);
+​            return false;
+​        }
+​        console.log('修改名字成功');
+​    })
+
+
+​    
+​    //8. fs.rmdir  删除目录   rmdir 这个方法只能删除目录，不能删除文件  
+​    fs.rmdir('abc目录',function(error){
+​        if(error){
+​            console.log(error);
+​            return false;
+​        }
+​        console.log('删除目录成功');
+​    })
+
+
+​    
+​    //9. fs.unlink删除文件  
+​    fs.unlink('index.txt',function(error){
+​        if(error){
+​            console.log(error);
+​            return false;
+​        }
+​        console.log('删除文件成功');
+​    })
+
+
+​    
+​    //10. fs.createReadStream  从文件流中读取数据，读取的文件比较大时建议用流的方式读取，文件比较大会多次读取。  
+​    var fileReadStream = fs.createReadStream( 'data1.json');
+​    var str = '';
+​    fileReadStream.on('data', (data) =&gt; {
+​        console.log(&quot;接收到&quot; + data.length);   //文件比较大时，会多次读取，多次执行该回调函数  
+​    str += data;
+​    })
+​    fileReadStream.on('end', () =&gt; {
+​        console.log(&quot; --- 结束 ---&quot;);
+​    console.log( str );
+​    })
+​    fileReadStream.on('error', (error) =&gt; {
+​        console.log(error)
+​    })
+
+
+​    
+​    //11. fs.createWriteStream  写入文件流  
+​    var fs = require(&quot;fs&quot;);
+​    var data  = &quot;我是从数据库获取的数据，我要保存起来&quot;;
+​    var writerStream = fs.createWriteStream('output.txt');
+​    writerStream.write( data , 'UTF8' );
+​    writerStream.end();  //标记文件末尾  结束写入流，释放资源  
+​    writerStream.on( 'finish',  function() {
+​        console.log(&quot;写入完成。&quot;);
+​    });
+​    writerStream.on( 'error',  function(error){
+​        console.log(error.stack);
+​    });
+​    console.log(&quot;程序执行完毕&quot;);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br></div></div><ol start="12"><li>pipe 管道流</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>const fs = require(&quot;fs&quot;); 
+const readerStream = fs.createReadStream( 'input.txt'); 
+const writerStream = fs.createWriteStream( 'output.txt'); 
+readerStream.pipe( writerStream ); 
+console.log(&quot;程序执行完毕&quot;);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ol start="13"><li>fs.access 判断目录、文件是否存在(读写权限)</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>const  fs = require('fs');
+fs.access('package.json',(err)=&gt;{
+console.log(err ?  '目录/文件不存在': '文件存在,可以进行读写');
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="nodejs异步读取文件的"><a href="#nodejs异步读取文件的" class="header-anchor">#</a> NodeJS异步读取文件的</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>//引入fs模块
+const { writeFile, readFile } = require('fs');
+//引入path模块
+const { resolve } = require('path');
+module.exports = {
+    writeFileAsync (data, fileName) {
+        //将对象转化json字符串
+        data = JSON.stringify(data);
+        const filePath = resolve(__dirname, fileName);
+        return new Promise((resolve, reject) =&gt; {
+            writeFile(filePath, data, err =&gt; {
+                if (!err) {
+                    console.log('文件保存成功~');
+                    resolve();
+                } else {
+                    reject('writeFileAsync方法出了问题：' + err);
+                }
+            })
+        })
+    },
+    readFileAsync (fileName) {
+        const filePath = resolve(__dirname, fileName);
+        return new Promise((resolve, reject) =&gt; {
+            readFile(filePath, (err, data) =&gt; {
+                if (!err) {
+                    console.log('文件读取成功~');
+                    //将json字符串转化js对象
+                    data = JSON.parse(data);
+                    resolve(data);
+                } else {
+                    reject('readFileAsync方法出了问题：' + err);
+                }
+            })
+        })
+
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h4 id="将base64转为图片、图片转base64"><a href="#将base64转为图片、图片转base64" class="header-anchor">#</a> 将base64转为图片、图片转base64</h4> <div class="language- extra-class"><pre><code>// 参考
+    [js怎么把base64的数据转换成图片？ 在网上找了好久只会把图片转成base64~~？](https://www.zhihu.com/question/60593079/answer/247418738)
+    [请使用 Buffer.from()/Buffer.alloc()](https://nodejs.org/zh-cn/docs/guides/buffer-constructor-deprecation/)
+    [理解一下Buffer.from(), Buffer.alloc()](https://www.cnblogs.com/onesea/p/15268029.html)
+    [使用Node.js实现base64和png文件相互转换的方法](https://www.jb51.net/article/182413.htm)
+    [浅入深出，原生API实现SVG 转 BASE64](https://juejin.cn/post/6844903802202832903)
+//将base64转为图片
+    const fs = require(&quot;fs&quot;);  // 引入fs模块
+    const base_64_url = &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALEAAAA4CAMAAACFSOnnAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAALrUExURQAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wlL9MAAAAD4dFJOUwABYP4wwPAgcJCg/QIHA9AIGPr7UAWwMRIeeBBLs8gcRRFU6yTL/MQUFQrfhFyIJrLuZ3QtCbz5PMeq8QSFoeO2eg6+TD0p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&quot;
+    const path = 'favicon.ico'
+    const base64 = base_64_url.replace(/^data:image\/\w+;base64,/, &quot;&quot;); //去掉图片base64码前面部分data:image/png;base64
+    // Buffer 已弃用用Buffer.from和Buffer.alloc代替.
+    // Buffer.from(), Buffer.alloc() 都是创建一个buffer， Buffer.from()从字符串或者数组创建一个buffer, Buffer.alloc()是创建一个指定大小的buffer。
+    const dataBuffer = new Buffer.from(base64, 'base64'); //把base64码转成buffer对象，
+    console.log('dataBuffer是否是Buffer对象：' + Buffer.isBuffer(dataBuffer)); // 输出是否是buffer对象
+    fs.writeFile(path, dataBuffer, function (err) {//用fs写入文件
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('写入成功！');
+        }
+    });
+
+//NodeJs将任意文件转换为base64格式
+    const path = require('path');
+    const mineType = require('mime-types');
+    function img_to_base64(filePath){
+        let data = fs.readFileSync(filePath);
+        data = new Buffer.from(data).toString('base64');
+        let base64 = 'data:' + mineType.lookup(filePath) + ';base64,' + data;
+        return base64.length&gt;30?base64:''
+    }
+    console.log(img_to_base64('favicon.svg'))
+    
+//将图片文件转换成base64
+    const fs = require(&quot;fs&quot;);
+    const util = require(&quot;util&quot;);
+    const imageData = await util.promisify(fs.readFileSync(fileUrl)); // 例：xxx/xx/xx.png
+    const imageBase64 = imageData.toString(&quot;base64&quot;);
+    const imagePrefix = &quot;data:image/png;base64,&quot;;
+    console.log(imagePrefix + imageBase64);
+</code></pre></div><h3 id="path"><a href="#path" class="header-anchor">#</a> path</h3> <div class="language- extra-class"><pre><code>/*
+path.dirname 
+path.resolve
+*/
+const path = require('path');
+path.dirname(dirname)
+</code></pre></div><h2 id="第三方库"><a href="#第三方库" class="header-anchor">#</a> 第三方库</h2> <h3 id="request"><a href="#request" class="header-anchor">#</a> request</h3> <div class="language- extra-class"><pre><code>/*
+1.下载图片
+*/
+[github-request](https://github.com/request/request)
+</code></pre></div><h4 id="request使用代理下载图片"><a href="#request使用代理下载图片" class="header-anchor">#</a> request使用代理下载图片</h4> <div class="language- extra-class"><pre><code>const request = require('request');//也是请求网址模块，只不过下载图片的函数比较简单，所以用这个
+const fs = require('fs');//用于操作文件流
+const path = require('path');
+const console = require('console');
+
+const img_url = &quot;https://www.baidu.com/favicon.ico&quot;
+// const img_url = &quot;https://www.google.com/favicon.ico&quot;
+const proxy = &quot;http://127.0.0.1:7890/&quot;
+const { host } = new URL(&quot;&quot;, img_url);
+const img_path = `images/${host}/favicon.ico`
+
+//2. fs.mkdir  创建目录  
+// fs.mkdir(img_path,error=&gt;{})
+myMkdirSync(path.dirname(img_path));
+console.log(fs.existsSync(path.dirname(img_path)))
+download_img(img_url, img_path, proxy)
+
+// 异步执行函数，用于下载图片，接收图片地址，文件名、代理节点。
+async function download_img(img_url, img_path, proxy = '') {
+await request({
+    url: img_url,
+    proxy: proxy,
+}).pipe(fs.createWriteStream(img_path)).on('close', function () {
+    console.log('pic saved!')
+})
+}
+
+//递归创建目录
+function myMkdirSync(dirname) {
+if (fs.existsSync(dirname)) {
+    return true;
+} else {
+    //如果父级目录已经创建，然后才能创建子级目录
+    if (myMkdirSync(path.dirname(dirname))) {
+    fs.mkdirSync(dirname);
+    return true;
+    }
+}
+}
+</code></pre></div><h3 id="request-promise-native"><a href="#request-promise-native" class="header-anchor">#</a> request-promise-native</h3> <div class="language- extra-class"><pre><code>const rpn = require('request-promise-native');
+const url = &quot;https://www.baidu.com/&quot;;
+async function useRequestPromiseNative(){
+let options = {
+method: 'POST',
+uri: url,
+body: { // 这里定义你的body参数
+},
+json: true, // 这个看你的参数而定
+};
+
+await rpn(image_url, function (error, response, body) {
+    console.log(response &amp;&amp; response.statusCode &amp;&amp; response.statusCode === 200)
+    return response &amp;&amp; response.statusCode &amp;&amp; response.statusCode === 200
+})
+//  let rpnbody = await rpn(options);  
+//  console.log(&quot;rpnbody&quot; , rpnbody );
+
+}
+useRequestPromiseNative();</code></pre></div></div></div>  <div class="page-edit"><div class="edit-link"><a href="https://github.com/wenxuli/vuepress-theme-vdoing/edit/master/docs/《JavaScript教程》笔记/nodejs的基本用法.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----> <!----></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/c77e3b/"><div>
+            JavaScript 中搜索数组元素
+            <!----></div></a> <span class="date">04-15</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/170433/"><div>
+            TypeScript 的基本使用
+            <!----></div></a> <span class="date">04-15</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/8f7083/"><div>
+            js读取文件
+            <!----></div></a> <span class="date">04-14</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:1031553051@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/wenxuli2" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2022
+    <span>Xuli | <a href="#" target="_blank">MIT License</a> | <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery">粤ICP备2022033241号</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.ae1014d0.js" defer></script><script src="/assets/js/2.0929aa91.js" defer></script><script src="/assets/js/271.072c0c98.js" defer></script>
+  </body>
+</html>
